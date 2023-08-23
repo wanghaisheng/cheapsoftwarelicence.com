@@ -27,13 +27,13 @@ const declineCookies = () => {
     class="fixed md:bottom-4 bottom-8 left-0 z-[60] sm:max-w-sm md:p-4 p-1 mx-auto"
   >
     <div
-      class="p-4 bg-gradient-to-br from-yellow-400 to-yellow rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700"
+      class="p-4 bg-gradient-to-br from-white to-white text-black rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700"
     >
-      <p class="mt-2 text-sm text-white">
+      <p class="mt-2 text-sm text-black">
         This website uses cookies to enhance your browsing experience.
       </p>
       <NuxtLink
-        class="mt-3 inline-flex justify-center items-center gap-2 font-semibold text-white/[.8] hover:text-white text-sm"
+        class="mt-3 inline-flex justify-center items-center gap-2 font-semibold text-black hover:text-black text-sm"
         to="/provacy-policy"
       >
         Learn more

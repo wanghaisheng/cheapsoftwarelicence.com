@@ -61,11 +61,6 @@ const handleSignOut = async () => {
 
     <div class="flex items-end space-x-2 md:mr-0 mr-1">
       <div v-if="data?.user?.email" class="xl:flex xl:flex-col hidden">
-        <NuxtLink href="/account" class="text-black"
-          ><span class="font-bold text-sm underline cursor-pointer"
-            >My Account</span
-          ></NuxtLink
-        >
         <span class="text-sm">{{ data?.user.email }}</span>
       </div>
       <div>
