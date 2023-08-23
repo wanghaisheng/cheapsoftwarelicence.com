@@ -83,7 +83,7 @@ export const generateTemplate = (
     <body style="background-color:#f3f3f5;">
        
       <div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;"> 
-        <img style="width: 100px; height: auto;" src="https://cheapsoftwarelicence.com/trend-dad.png" alt="trend dad" />
+        <img style="width: 100px; height: auto;" src="https://cheapsoftwarelicence.com/cheapsoftwarelicence.jpg" alt="cheapsoftwarelicence" />
         <span>Your code is [${code}]</span> </div>
       <div style="background-color:#f3f3f5;">
        
@@ -136,7 +136,7 @@ export const generateTemplate = (
                       <tr>
                         <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                           <div style="font-family:Poppins, Helvetica, Arial, sans-serif;font-size:20px;font-weight:300;line-height:30px;text-align:left;color:#003366;">
-                            <img style="width: 100px; height: auto;" src="https://cheapsoftwarelicence.com/trend-dad.png" alt="trend dad" />
+                            <img style="width: 100px; height: auto;" src="https://cheapsoftwarelicence.com/cheapsoftwarelicence.jpg" alt="cheapsoftwarelicence" />
                             <h1 style="margin: 0; font-size: 32px; line-height: 50px; font-weight: 400;"> Your code is [${code}]</h1>
                           </div>
                         </td>

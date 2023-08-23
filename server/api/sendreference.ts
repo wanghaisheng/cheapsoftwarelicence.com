@@ -17,7 +17,7 @@ const createReference = async (email: string) => {
   });
 
   const BASE_URI = process.env.AUTH_ORIGIN;
-  const code = "DADDY10";
+  const code = "OFFICE10";
 
   await transporter.sendMail({
     from: "BABACHOULZ <mark@rubyfinance.nl>", // sender address

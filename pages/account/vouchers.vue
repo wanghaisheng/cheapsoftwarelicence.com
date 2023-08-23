@@ -2,7 +2,7 @@
 const { data } = useAuth();
 const user = data.value?.user;
 const voucherInput = ref("");
-const correctVoucher = "DADDY10";
+const correctVoucher = "OFFICE10";
 const isCorrectVoucher = ref("unknown");
 const isLoading = ref(false);
 if (!user) {

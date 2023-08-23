@@ -4,11 +4,11 @@ import { useCartStore } from "@/stores/cart-store";
 const { params, query } = useRoute();
 
 useHead({
-  title: `Trend Dad, ${params.name}`,
+  title: `CheapSoftwareLicences, ${params.name}`,
   meta: [
     {
       name: "description",
-      content: `Get ${params.name} with your trend dad, buy products and stay trending.`,
+      content: `Get ${params.name} with your CheapSoftwareLicences, software and productkeys.`,
     },
   ],
 });
