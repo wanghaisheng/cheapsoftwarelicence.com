@@ -1,11 +1,11 @@
-import { products } from "../../drizzle/schema";
+import { softwareProducts } from "../../drizzle/schema";
 import db from "../../drizzle/db";
 import { eq } from "drizzle-orm";
 
 // Define the function to fetch cart items
 const fetchCartItems = async (cartItems: any) => {
   const promises = cartItems.map((itemId: any) =>
-    db.select().from(products).where(eq(products.id, itemId))
+    db.select().from(softwareProducts).where(eq(softwareProducts.id, itemId))
   );
 
   const allCartItems = await Promise.all(promises);

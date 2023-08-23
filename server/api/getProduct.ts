@@ -1,9 +1,9 @@
-import { products } from "../../drizzle/schema";
+import { softwareProducts } from "../../drizzle/schema";
 import db from "../../drizzle/db";
 import { eq, and } from "drizzle-orm";
 
 const fetchProduct = async (id: number) => {
-  const product = await db.select().from(products).where(eq(products.id, id));
+  const product = await db.select().from(softwareProducts).where(eq(softwareProducts.id, id));
   console.log(product[0]);
   return product[0];
 };

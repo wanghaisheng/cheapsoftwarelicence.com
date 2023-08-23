@@ -1,12 +1,12 @@
-import { products } from "../../drizzle/schema";
+import { softwareProducts } from "../../drizzle/schema";
 import db from "../../drizzle/db";
 import { eq } from "drizzle-orm";
 
 const fetchCollectionProducts = async (collection: string) => {
   const product = await db
     .select()
-    .from(products)
-    .where(eq(products.collection, collection));
+    .from(softwareProducts)
+    .where(eq(softwareProducts.collection, collection));
   return product;
 };
 

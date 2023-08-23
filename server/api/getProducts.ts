@@ -1,8 +1,8 @@
-import { products } from "../../drizzle/schema";
+import { softwareProducts } from "../../drizzle/schema";
 import db from "../../drizzle/db";
 
 const fetchProducts = async () => {
-  const product = await db.select().from(products);
+  const product = await db.select().from(softwareProducts);
   return product;
 };
 
