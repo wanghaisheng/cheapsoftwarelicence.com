@@ -40,16 +40,16 @@ const handleAddToCart = (id: number) => {
 
     <nuxt-img
       :height="500"
-      src="/dalle.png"
+      src="/collectionimages/office.jpg"
       alt="dalle"
-      class="object-cover object-center absolute h-20 z-10 w-screen bg-gradient-to-t from-white to-transparent"
+      class="object-cover object-top absolute h-20 z-10 w-screen bg-gradient-to-t from-white to-transparent"
     />
     <div
       class="absolute h-20 z-10 flex items-center justify-center w-screen bg-gradient-to-t from-white/90 to-transparent"
     >
       <span
         class="text-center font-bold text-lg md:text-3xl tracking-2 text-black text-shadow"
-        >Activate your discount now.</span
+        >Get your keys instantly</span
       >
     </div>
   </div>
@@ -63,7 +63,7 @@ const handleAddToCart = (id: number) => {
             v-if="data?.data?.image"
             :height="500"
             :width="500"
-            class="w-80 h-80 mx-auto p-0.5 border bg-gray-100 border-groove transition hover:scale-102 duration-700"
+            class="w-80 h-80 mx-auto transition hover:scale-102 duration-700"
             :src="`/productimages/${(data?.data?.image as string)}.webp`"
             :alt="(data?.data?.name as string)"
           />
@@ -71,7 +71,7 @@ const handleAddToCart = (id: number) => {
             v-else
             class="h-80 w-80 border-1 border-groove border-black"
           ></div>
-          <div class="flex gap-2">
+          <div class="flex gap-2 mt-4">
             <nuxt-img
               v-if="data?.data?.image"
               :height="500"
@@ -129,35 +129,35 @@ const handleAddToCart = (id: number) => {
           <div class="mt-10 flex flex-col">
             <span class="text-lg font-bold mt">Product properties</span>
             <div class="grid grid-cols-2 w-full gap-1">
-              <span v-if="data?.data?.spec1 !== 'null'">Name:</span>
+              <span v-if="data?.data?.spec1 !== 'null'">Type</span>
               <span v-if="data?.data?.spec1 !== 'null'">{{
                 data?.data?.spec1
               }}</span>
-              <span v-if="data?.data?.spec2 !== 'null'">Type</span>
+              <span v-if="data?.data?.spec2 !== 'null'"></span>
               <span v-if="data?.data?.spec2 !== 'null'">{{
                 data?.data?.spec2
               }}</span>
-              <span v-if="data?.data?.spec3 !== 'null'">Slogan</span>
+              <span v-if="data?.data?.spec3 !== 'null'"></span>
               <span v-if="data?.data?.spec3 !== 'null'">{{
                 data?.data?.spec3
               }}</span>
-              <span v-if="data?.data?.spec4 !== 'null'">Characteristics</span>
+              <span v-if="data?.data?.spec4 !== 'null'"></span>
               <span v-if="data?.data?.spec4 !== 'null'">{{
                 data?.data?.spec4
               }}</span>
-              <span v-if="data?.data?.spec5 !== 'null'">Color</span>
+              <span v-if="data?.data?.spec5 !== 'null'"></span>
               <span v-if="data?.data?.spec5 !== 'null'">{{
                 data?.data?.spec5
               }}</span>
-              <span v-if="data?.data?.spec6 !== 'null'">Packaging</span>
+              <span v-if="data?.data?.spec6 !== 'null'"></span>
               <span v-if="data?.data?.spec6 !== 'null'">{{
                 data?.data?.spec6
               }}</span>
-              <span v-if="data?.data?.spec7 !== 'null'">Dimensions</span>
+              <span v-if="data?.data?.spec7 !== 'null'"></span>
               <span v-if="data?.data?.spec7 !== 'null'">{{
                 data?.data?.spec7
               }}</span>
-              <span v-if="data?.data?.spec8 !== 'null'">Weight</span>
+              <span v-if="data?.data?.spec8 !== 'null'"></span>
               <span v-if="data?.data?.spec8 !== 'null'">{{
                 data?.data?.spec8
               }}</span>

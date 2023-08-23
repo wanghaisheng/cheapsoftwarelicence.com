@@ -9,9 +9,9 @@
           1. What kind of products are available on your website?
         </div>
         <div class="answer">
-          We offer a diverse range of products, including electronics, fashion
-          accessories, home decor, beauty products, and more. Our catalog is
-          carefully curated to cater to a wide variety of interests and needs.
+          We offer software products, in form of generated product keys. Our
+          catalog is carefully curated to cater to a wide variety of interests
+          and needs.
         </div>
       </div>
       <div class="faq-item">
@@ -47,11 +47,9 @@
         <div class="question">5. What is your return and refund policy?</div>
         <div class="answer">
           We have a hassle-free return policy. If you're not satisfied with your
-          purchase, you can return it within 30 days of receiving the item. Just
-          ensure the product is in its original condition with all packaging
-          intact. Once we receive the returned item, we'll process your refund.
-          For detailed information, please refer to our Returns and Refunds
-          page.
+          purchase, you can return it within 30 days of receiving the item.
+          After activating your product, it cannot be returned to us. Once we
+          receive the returned item, we'll process your refund.
         </div>
       </div>
     </div>

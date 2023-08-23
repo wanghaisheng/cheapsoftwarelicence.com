@@ -4,7 +4,7 @@ import { useCartStore } from "../stores/cart-store";
 const store = useCartStore();
 const cartItems: Ref<number[]> = ref([]);
 const total = ref(500);
-const totalShippingCosts = ref(4.5);
+const totalShippingCosts = ref(0);
 const totalToPay = ref(0);
 cartItems.value.push(...store.cart);
 
@@ -67,7 +67,7 @@ const removeCartItem = async (index: number) => {
                   <div class="i-mdi-star text-xl text-yellow" />
                   <div class="i-mdi-star text-xl text-yellow" />
                   <div class="i-mdi-star-half text-xl text-yellow" />
-                  <span class="text-sm">(32)</span>
+                  <span class="text-sm">(66)</span>
                 </div>
 
                 <div class="flex mt-2 gap-2">
@@ -81,7 +81,7 @@ const removeCartItem = async (index: number) => {
                   />
                 </div>
                 <div class="mt-2">
-                  <span class="">Ordered today, delivered tomorrow.</span>
+                  <span class="">Receive your keys instanly after payment</span>
                 </div>
               </div>
             </div>

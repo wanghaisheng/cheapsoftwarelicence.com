@@ -3,7 +3,7 @@ import { useCartStore } from "../stores/cart-store";
 const store = useCartStore();
 const cartItems: Ref<number[]> = ref([]);
 const total = ref(500);
-const totalShippingCosts = ref(4.5);
+const totalShippingCosts = ref(0);
 const totalToPay = ref(0);
 
 cartItems.value.push(...store.cart);
@@ -103,7 +103,7 @@ const createUser = async () => {
     @submit.prevent="createUser"
     class="w-screen min-h-screen flex flex-col items-center justify-center"
   >
-    <h1>Shipping</h1>
+    <h1>Shipping / Email</h1>
     <span class="text-gray-600 px-6"
       >Please check your credentials carefully before you continue.</span
     >

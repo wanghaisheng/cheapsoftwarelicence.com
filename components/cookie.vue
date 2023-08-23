@@ -27,7 +27,7 @@ const declineCookies = () => {
     class="fixed md:bottom-4 bottom-8 left-0 z-[60] sm:max-w-sm md:p-4 p-1 mx-auto"
   >
     <div
-      class="p-4 bg-gradient-to-br from-white to-white text-black rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700"
+      class="p-4 bg-gradient-to-br from-white border border-groove border-black to-white text-black rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700"
     >
       <p class="mt-2 text-sm text-black">
         This website uses cookies to enhance your browsing experience.
@@ -56,14 +56,14 @@ const declineCookies = () => {
         <button
           @click="acceptCookies"
           type="button"
-          class="py-[.4125rem] text-black px-3 inline-flex justify-center items-center gap-2 rounded-full border-2 border-white font-semibold text-white hover:text-gray-800 hover:bg-white hover:border-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all text-sm"
+          class="py-[.4125rem] text-black px-3 inline-flex justify-center items-center gap-2 rounded-full border-2 font-semibold text-white hover:text-gray-800 hover:bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all text-sm"
         >
           Accept all
         </button>
         <button
           @click="declineCookies"
           type="button"
-          class="py-[.4125rem] text-black px-3 inline-flex justify-center items-center gap-2 rounded-full border-2 border-white font-semibold text-white hover:text-gray-800 hover:bg-white hover:border-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all text-sm"
+          class="py-[.4125rem] text-black px-3 inline-flex justify-center items-center gap-2 rounded-full border-2 font-semibold text-white hover:text-gray-800 hover:bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-all text-sm"
         >
           Reject all
         </button>
