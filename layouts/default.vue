@@ -4,12 +4,11 @@ import Upheader from "~/components/headers/upheader.vue";
 import Downheader from "~/components/headers/downheader.vue";
 import Tsxbar from "@/components/tsxbar.vue";
 useHead({
-  title: "Trend Dad, Acquire the  latest trends you're looking for.",
+  title: "CheapSoftwareLicences, Find your cheap software keys.",
   meta: [
     {
       name: "description",
-      content:
-        "Get the latest trends with your trend dad, buy products and stay trending.",
+      content: "Find your cheap software keys, secure and reliable software.",
     },
   ],
 });
@@ -21,7 +20,6 @@ useHead({
     <ClientOnly><Downheader /></ClientOnly>
     <slot />
     <Footer />
-    <Tsxbar />
     <ClientOnly><Cookie /></ClientOnly>
   </div>
 </template>
