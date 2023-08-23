@@ -49,18 +49,18 @@ const createPayment = async (email: string, allitems: number[]) => {
         shipping_rate_data: {
           type: "fixed_amount",
           fixed_amount: {
-            amount: 4.5 * 100,
+            amount: 0 * 100,
             currency: "eur",
           },
           display_name: "Estimated delivery",
           delivery_estimate: {
             minimum: {
-              unit: "business_day",
-              value: 2,
+              unit: "hour",
+              value: 0,
             },
             maximum: {
-              unit: "business_day",
-              value: 5,
+              unit: "hour",
+              value: 1,
             },
           },
         },
