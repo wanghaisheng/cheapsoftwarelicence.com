@@ -46,5 +46,10 @@ const products = data.value?.data;
         </div>
       </div>
     </div>
+    <div class="flex flex-col mt-10 items-center">
+      <div class="grid md:grid-cols-2 grid-cols-1 mt-0.5 md:gap-6 md:mt-6">
+        <collection-block name="office" image="/collectionimages/office.jpg" />
+      </div>
+    </div>
   </div>
 </template>
