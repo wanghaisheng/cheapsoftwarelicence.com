@@ -18,7 +18,7 @@ const handleSignOut = async () => {
         class="group flex items-center"
       >
         <button
-          class="bg-white md:text-md lg:text-xl text-sm text-black border-none cursor-pointer group-hover:text-gray-600"
+          class="bg-white md:text-md lg:text-xl text-black text-sm text-black border-none cursor-pointer group-hover:text-gray-600"
         >
           Buy Software
         </button>
@@ -42,7 +42,7 @@ const handleSignOut = async () => {
       <div>
         <NuxtLink @click="isOpenCollections = false" href="/trending"
           ><button
-            class="bg-white border-none md:text-md lg:text-xl text-sm hover:text-gray-600 cursor-pointer"
+            class="bg-white border-none text-black md:text-md lg:text-xl text-sm hover:text-gray-600 cursor-pointer"
           >
             Trending
           </button></NuxtLink
