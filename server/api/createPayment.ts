@@ -54,10 +54,7 @@ const createPayment = async (email: string, allitems: number[]) => {
           },
           display_name: "Estimated delivery",
           delivery_estimate: {
-            minimum: {
-              unit: "hour",
-              value: 0,
-            },
+           
             maximum: {
               unit: "hour",
               value: 1,
