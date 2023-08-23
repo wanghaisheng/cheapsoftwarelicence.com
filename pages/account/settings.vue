@@ -6,10 +6,6 @@ if (!user) {
 }
 const isLoading = ref(false);
 
-definePageMeta({
-  middleware: "auth",
-});
-
 const { data: userData } = await useAsyncData("getUser", () =>
   $fetch("/api/getUser", {
     method: "POST",
@@ -49,6 +45,10 @@ const createUser = async () => {
   );
   isLoading.value = false;
   await navigateTo("/");
+
+  if (!data.value?.user?.email) {
+    navigateTo("/");
+  }
 };
 </script>
 

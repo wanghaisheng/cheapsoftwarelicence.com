@@ -9,10 +9,6 @@ if (!user) {
   navigateTo("/");
 }
 
-definePageMeta({
-  middleware: "auth",
-});
-
 const checkVoucher = () => {
   isLoading.value = true;
   setTimeout(() => {
@@ -37,6 +33,10 @@ const { data: userData } = await useAsyncData("getUser", () =>
     },
   })
 );
+
+if (!data.value?.user?.email) {
+  navigateTo("/");
+}
 </script>
 
 <template>

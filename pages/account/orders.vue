@@ -10,10 +10,6 @@ if (!user) {
   navigateTo("/sign-in");
 }
 
-definePageMeta({
-  middleware: "auth",
-});
-
 const isPayd = ref(false);
 const route = useRoute();
 
@@ -38,6 +34,10 @@ const checkReceived = async (id: string) => {
   console.log(productCode.value);
   isSend.value = productCode.value;
   isOpen.value = true;
+
+  if (!data.value?.user?.email) {
+    navigateTo("/");
+  }
 };
 </script>
 

@@ -6,10 +6,6 @@ const password = ref();
 const isLoading = ref(false);
 const isFalseCredentials = ref(false);
 
-definePageMeta({
-  middleware: "signedin",
-});
-
 const handleSignInGoogle = async () => {
   await signIn("google");
 };

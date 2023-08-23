@@ -6,10 +6,6 @@ if (!user) {
   navigateTo("/sign-in");
 }
 
-definePageMeta({
-  middleware: "auth",
-});
-
 const { data: userData } = await useAsyncData("getUser", () =>
   $fetch("/api/getUser", {
     method: "POST",
@@ -19,6 +15,10 @@ const { data: userData } = await useAsyncData("getUser", () =>
     },
   })
 );
+
+if (!data.value?.user?.email) {
+  navigateTo("/");
+}
 </script>
 
 <template>

@@ -12,10 +12,6 @@ const confirmPassword = ref("");
 const isWrongPasswordsMatch = ref(false);
 const isWrongPasswordMatch = ref(false);
 
-definePageMeta({
-  middleware: "signedin",
-});
-
 const handleSignInGoogle = async () => {
   await signIn("google");
 };
@@ -69,6 +65,10 @@ const handleSigninCredentials = async () => {
     }
   }
 };
+
+if (data.value?.user?.email) {
+  navigateTo("/");
+}
 </script>
 
 <template>

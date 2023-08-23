@@ -56,7 +56,7 @@ const handleSignOut = async () => {
       </div>
       <div>
         <button
-          class="bg-white text-black py-1 mr-2"
+          class="bg-white text-black py-1 mr-2 cursor-pointer"
           @click="handleSignOut"
           v-if="data?.user?.email"
         >
@@ -64,7 +64,7 @@ const handleSignOut = async () => {
         </button>
         <NuxtLink
           to="/sign-in"
-          class="bg-gray-800 text-white mr-2 py-1"
+          class="bg-gray-800 text-white mr-2 py-1 cursor-pointer"
           v-if="!data?.user?.email"
         >
           Sign In
