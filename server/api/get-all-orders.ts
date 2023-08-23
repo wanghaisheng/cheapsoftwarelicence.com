@@ -8,18 +8,11 @@ const stripe = new Stripe(process.env.STRIPE_TEST_KEY!, {
 });
 
 export default defineEventHandler(async (event) => {
-  const {username, password} = getQuery(event)
+    const session = await getServerSession(event);
 
-  if (username !== "mark.teekens@outlook.com" && password !== process.env.PASSWORD_ORDERS) {
-    throw createError({
-      statusCode: 403,
-      statusMessage: "no access",
-    });
-  }
+  const { orders } = await calculatePayments();
 
-  const { ordersData } = await calculatePayments();
-
-  return ordersData 
+  return orders 
 });
 
 const calculatePayments = async () => {
@@ -32,17 +25,9 @@ const calculatePayments = async () => {
     (item) =>
         item.payment_status === "paid" && item.created > unixToday - thirtydays
   );
-  const orderIds = orders.map((order) => order.id)
-
-  await db.delete(productCodes)
-
-  for(let i = 0; i < orderIds.length; i++){
-    await db
-    .insert(productCodes)
-    .values({order: orderIds[i]})
-  }
-
-  const ordersData = await db.select().from(productCodes)
   
-  return { ordersData };
+
+  
+  
+  return { orders };
 };

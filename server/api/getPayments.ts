@@ -19,12 +19,11 @@ export default defineEventHandler(async (event) => {
   return { users: userList };
 });
 
-const calculatePayments = async (email: any) => {
+const calculatePayments = async (email: string) => {
   const response = await stripe.checkout.sessions.list();
   const userList = response.data.filter(
     (item) =>
       item.client_reference_id === email && item.payment_status === "paid"
   );
-  // const receivedCode = await db.select().from(productCodes).where(eq(productCodes.id, ));
   return { userList };
 };
