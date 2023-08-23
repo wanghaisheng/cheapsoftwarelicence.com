@@ -74,7 +74,7 @@ const sendReference = async () => {
     </div>
   </div>
   <div
-    class="absolute z-20 gap-1 flex top-0 h-6 w-screen items-center justify-center bg-white text-xs text-black"
+    class="absolute z-20 gap-1 flex top-0 h-6 w-screen items-center justify-center bg-blue-700 text-xs text-white"
   >
     <span>Get 10% off, to get the code</span
     ><span class="underline cursor-pointer" @click="openPopup = true"
@@ -83,10 +83,10 @@ const sendReference = async () => {
   </div>
   <NuxtLink
     href="/"
-    class="absolute flex gap-1 items-center top-10 md:top-6 md:left-8 lg:left-16 lef-2 decoration-none ml-4"
+    class="absolute flex gap-1 items-center top-10 md:top-6 md:left-8 lg:left-16 left-0 decoration-none ml-4"
     ><nuxt-img
       :height="500"
-      class="md:h-12 h-4 w-auto"
+      class="md:h-12 h-10 w-auto"
       src="/cheapsoftwarelicence.png"
       alt=""
     />
@@ -97,7 +97,7 @@ const sendReference = async () => {
     <div></div>
     <div class="flex mt-2 items-center gap-2 mr-2">
       <div class="flex items-center space-x-2">
-        <div class="md:flex items-center space-x-2 hidden">
+        <div class="flex items-center space-x-2">
           <NuxtLink href="/help"
             ><div class="i-mdi-help-circle-outline text-2xl text-black"
           /></NuxtLink>
@@ -122,15 +122,7 @@ const sendReference = async () => {
           >
         </div>
       </div>
-      <NuxtLink href="/cart" class="flex md:hidden pl-4 items-center"
-        ><div class="i-mdi-shopping-outline text-2xl text-black" />
-        <div class="group hover:text-gray-600">
-          <span
-            class="bg-white group-hover:bg-white text-black rounded-full px-2 py-1"
-            >{{ store.getCart.length }}</span
-          >
-        </div></NuxtLink
-      >
+
       <div></div>
     </div>
   </div>

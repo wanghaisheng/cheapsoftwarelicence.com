@@ -20,7 +20,7 @@ const handleSignOut = async () => {
         <button
           class="bg-white md:text-md lg:text-xl text-sm text-black border-none cursor-pointer group-hover:text-gray-600"
         >
-          Office Collections
+          Buy Software
         </button>
         <i
           class="-ml-2 cursor-pointer i-mdi-chevron-down group-hover:text-gray-600"
@@ -48,15 +48,6 @@ const handleSignOut = async () => {
           </button></NuxtLink
         >
       </div>
-      <div>
-        <NuxtLink @click="isOpenCollections = false" href="/account"
-          ><button
-            class="bg-white border-none md:text-md lg:text-xl text-sm hover:text-gray-600 cursor-pointer"
-          >
-            My account
-          </button></NuxtLink
-        >
-      </div>
     </div>
 
     <div class="flex items-end space-x-2 md:mr-0 mr-1">
@@ -65,7 +56,7 @@ const handleSignOut = async () => {
       </div>
       <div>
         <button
-          class="bg-white text-black"
+          class="bg-white text-black mr-2"
           @click="handleSignOut"
           v-if="data?.user?.email"
         >
@@ -73,7 +64,7 @@ const handleSignOut = async () => {
         </button>
         <NuxtLink
           to="/sign-in"
-          class="bg-white text-black"
+          class="bg-white text-black mr-2"
           v-if="!data?.user?.email"
         >
           Sign In
