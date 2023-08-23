@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /terms
+Disallow: /privacy-policy
+Disallow: /help
+Disallow: /cancel
+Disallow: /success
+Disallow: /account
+Disallow: /account/*
+Disallow: /orders
+Disallow: /cart
+Disallow: /forgot-password
+
+Sitemap: https://www.cheapsoftwarelicence.com/sitemap.xml
