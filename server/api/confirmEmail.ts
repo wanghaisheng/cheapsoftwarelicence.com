@@ -65,7 +65,7 @@ const sendEmail = async (name?: string, email?: string, password?: string) => {
   const BASE_URI = process.env.AUTH_ORIGIN;
 
   await transporter.sendMail({
-    from: "VETA NETWORK <mark@rubyfinance.nl>", // sender address
+    from: "CHEAPSOFTWARELICENCE <mark@rubyfinance.nl>", // sender address
     to: email, // list of receivers
     subject: `Your code is [${code}]`, // Subject line
     text: `${code} `, // plain text body
