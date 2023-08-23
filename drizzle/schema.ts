@@ -72,3 +72,10 @@ export const emailReferences = pgTable("emaileferences", {
   id: serial("id").primaryKey(),
   email: varchar("email", { length: 256 }),
 });
+
+export const productCodes = pgTable("productcodes", {
+  id: serial("id").primaryKey(),
+  order: varchar("order", { length: 256 }),
+  code: varchar("code", { length: 256 }),
+  send: boolean("send")
+});

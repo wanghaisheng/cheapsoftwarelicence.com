@@ -13,11 +13,10 @@ export default defineEventHandler(async (event) => {
       statusMessage: "User is not authenticated, please sign in",
     });
   }
-  const { email } = await readBody(event);
 
-  const { userList, response } = await calculatePayments(email);
+  const { userList } = await calculatePayments(session.user.email);
 
-  return { users: userList, response: response.data };
+  return { users: userList };
 });
 
 const calculatePayments = async (email: any) => {
@@ -26,5 +25,6 @@ const calculatePayments = async (email: any) => {
     (item) =>
       item.client_reference_id === email && item.payment_status === "paid"
   );
-  return { userList, response };
+  // const receivedCode = await db.select().from(productCodes).where(eq(productCodes.id, ));
+  return { userList };
 };
