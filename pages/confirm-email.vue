@@ -1,10 +1,6 @@
 <script lang="ts" setup>
 const errmsg = ref();
 
-definePageMeta({
-  middleware: "signedin",
-});
-
 const code = ref();
 const password = ref();
 const route = useRoute();
