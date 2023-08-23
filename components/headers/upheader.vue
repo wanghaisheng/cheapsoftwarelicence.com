@@ -38,7 +38,7 @@ const sendReference = async () => {
 <template>
   <div
     v-if="openPopup"
-    class="fixed top-0 left-0 right-0 z-40 h-screen flex items-center justify-center bg-black bg-opacity-50"
+    class="fixed top-0 left-0 right-0 z-40 h-screen flex items-center justify-center bg-gray-800 bg-opacity-50"
   >
     <div
       class="relative py-10 z-50 px-10 bg-white border border-groove border-gray-300"
@@ -66,7 +66,7 @@ const sendReference = async () => {
         <button
           @click="sendReference"
           :disabled="isLoading"
-          class="bg-black text-white disabled:bg-gray-300 disabled:text-gray-400 py-2 px-4 border-none mt-4 cursor-pointer hover:bg-gray-900"
+          class="bg-gray-800 text-white disabled:bg-gray-300 disabled:text-gray-400 py-2 px-4 border-none mt-4 cursor-pointer hover:bg-gray-900"
         >
           {{ isLoading ? "Sending" : "Send code" }}
         </button>
@@ -83,36 +83,33 @@ const sendReference = async () => {
   </div>
   <NuxtLink
     href="/"
-    class="absolute flex gap-1 items-center top-6 md:top-2 md:left-8 lg:left-16 left-0 decoration-none ml-4"
-    ><nuxt-img
-      :height="500"
-      class="md:h-20 h-14 w-auto"
-      src="/cheapsoftwarelicence.png"
-      alt=""
-    />
+    class="absolute flex gap-1 items-center top-8 md:top-6 md:left-8 lg:left-16 left-0 decoration-none ml-4"
+    ><span class="font-melodrama text-white md:text-3xl text-lg">
+      cheapsoftwarelicence.com
+    </span>
   </NuxtLink>
   <div
-    class="h-10 mt-6 flex bg-white md:w-4/6 w-full mx-auto justify-between items-center text-black"
+    class="h-10 mt-6 flex bg-gray-800 w-full w-full mx-auto justify-between items-center text-white"
   >
     <div></div>
-    <div class="flex mt-2 items-center gap-2 mr-2">
+    <div class="flex mt-2 items-center gap-2 mr-5">
       <div class="flex items-center space-x-2">
         <div class="flex items-center space-x-2">
           <NuxtLink href="/help"
-            ><div class="i-mdi-help-circle-outline text-2xl text-black"
+            ><div class="i-mdi-help-circle-outline text-2xl text-white"
           /></NuxtLink>
           <NuxtLink v-if="user" href="/account"
-            ><div class="i-mdi-account-outline text-2xl text-black"
+            ><div class="i-mdi-account-outline text-2xl text-white"
           /></NuxtLink>
           <NuxtLink v-else href="/sign-in"
-            ><div class="i-mdi-account-outline text-2xl text-black"
+            ><div class="i-mdi-account-outline text-2xl text-white"
           /></NuxtLink>
           <!-- <div class="i-mdi-cards-heart-outline text-2xl text-black" /> -->
           <NuxtLink href="/terms"
-            ><div class="i-mdi-ruler-square-compass text-2xl text-black"
+            ><div class="i-mdi-ruler-square-compass text-2xl text-white"
           /></NuxtLink>
           <NuxtLink href="/cart" class="flex pl-4 items-center"
-            ><div class="i-mdi-shopping-outline text-2xl text-black" />
+            ><div class="i-mdi-shopping-outline text-2xl text-white" />
             <div class="group hover:text-gray-600">
               <span
                 class="bg-white group-hover:bg-white text-black rounded-full px-2 py-1"

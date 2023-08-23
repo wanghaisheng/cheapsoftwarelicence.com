@@ -47,6 +47,7 @@ const sendEmail = async () => {
             <tr>
               <th scope="col" class="px-6 py-3">Id</th>
               <th scope="col" class="px-6 py-3">Email</th>
+              <th scope="col" class="px-6 py-3">Created</th>
             </tr>
           </thead>
           <tbody>
@@ -55,23 +56,21 @@ const sendEmail = async () => {
               class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
               v-for="(payment, i) in payments"
             >
-              <div v-if="payment.success_url?.includes('cheapsoftwarelicence')">
-                <th>
-                  <span class="">
-                    {{ payment.id }}
-                  </span>
-                </th>
-                <th>
-                  <span class="">
-                    {{ payment.customer_email }}
-                  </span>
-                </th>
-                <th>
-                  <span class="">
-                    {{ payment.success_url }}
-                  </span>
-                </th>
-              </div>
+              <th v-if="payment.success_url?.includes('cheapsoftwarelicence')">
+                <span class="">
+                  {{ payment.id }}
+                </span>
+              </th>
+              <th v-if="payment.success_url?.includes('cheapsoftwarelicence')">
+                <span class="">
+                  {{ payment.customer_email }}
+                </span>
+              </th>
+              <th>
+                <span class="font-medium">
+                  {{ dayJs(payment.created * 1000).format("DD-MM-YYYY HH:mm") }}
+                </span>
+              </th>
             </tr>
           </tbody>
         </table>
@@ -79,10 +78,10 @@ const sendEmail = async () => {
       <div class="mt-10 flex flex-col gap-4">
         <label>OrderId</label>
         <input required class="w-60 py-1" type="text" v-model="orderId" />
-        <label>Key</label>
-        <input required class="w-60 py-1" type="text" v-model="softwarekey" />
         <label>Email</label>
         <input required class="w-60 py-1" type="text" v-model="emailCustomer" />
+        <label>Key</label>
+        <input required class="w-60 py-1" type="text" v-model="softwarekey" />
         <span
           @click="() => sendEmail()"
           class="cursor-pointer underline font-medium mr-2 px-2.5 py-0.5 rounded"

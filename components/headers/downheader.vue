@@ -10,7 +10,7 @@ const handleSignOut = async () => {
 
 <template>
   <div
-    class="h-10 mt-2 flex bg-white md:w-4/6 w-full mx-auto justify-between items-center text-black mb-1"
+    class="h-10 flex bg-gray-800 w-full mx-auto justify-between items-center text-white"
   >
     <div class="flex items-center md:space-x-4 ml-1">
       <div
@@ -18,7 +18,7 @@ const handleSignOut = async () => {
         class="group flex items-center"
       >
         <button
-          class="bg-white md:text-md lg:text-xl text-black text-sm text-black border-none cursor-pointer group-hover:text-gray-600"
+          class="md:text-md lg:text-xl text-white bg-gray-800 text-sm border-none cursor-pointer"
         >
           Buy Software
         </button>
@@ -34,7 +34,7 @@ const handleSignOut = async () => {
         <NuxtLink
           @click="isOpenCollections = false"
           href="/collections/office"
-          class="block text-black hover:text-white hover:bg-black decoration-none px-1 py-2 cursor-pointer"
+          class="block text-black hover:text-white hover:bg-gray-800 decoration-none px-1 py-2 cursor-pointer"
           >office</NuxtLink
         >
       </div>
@@ -42,21 +42,21 @@ const handleSignOut = async () => {
       <div>
         <NuxtLink @click="isOpenCollections = false" href="/trending"
           ><button
-            class="bg-white border-none text-black md:text-md lg:text-xl text-sm hover:text-gray-600 cursor-pointer"
+            class="text-white border-none md:text-md lg:text-xl text-sm bg-gray-800 cursor-pointer"
           >
-            Trending
+            Trending Software
           </button></NuxtLink
         >
       </div>
     </div>
 
-    <div class="flex items-end space-x-2 md:mr-0 mr-1">
+    <div class="flex items-end space-x-2 md:mr-4 mr-2">
       <div v-if="data?.user?.email" class="xl:flex xl:flex-col hidden">
         <span class="text-sm">{{ data?.user.email }}</span>
       </div>
       <div>
         <button
-          class="bg-white text-black mr-2"
+          class="bg-white text-black py-1 mr-2"
           @click="handleSignOut"
           v-if="data?.user?.email"
         >
@@ -64,7 +64,7 @@ const handleSignOut = async () => {
         </button>
         <NuxtLink
           to="/sign-in"
-          class="bg-white text-black mr-2"
+          class="bg-gray-800 text-white mr-2 py-1"
           v-if="!data?.user?.email"
         >
           Sign In
