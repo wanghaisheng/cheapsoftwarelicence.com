@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const isOpenCollections = ref(false);
 
-const { data, signOut } = useAuth();
+const { status, data, signOut } = useAuth();
 const handleSignOut = async () => {
   await signOut();
   navigateTo("/sign-in");
@@ -51,21 +51,21 @@ const handleSignOut = async () => {
     </div>
 
     <div class="flex items-end space-x-2 md:mr-4 mr-2">
-      <div v-if="data?.user?.email" class="xl:flex xl:flex-col hidden">
-        <span class="text-sm">{{ data?.user.email }}</span>
+      <div v-if="status === 'authenticated'" class="xl:flex xl:flex-col hidden">
+        <span class="text-sm">{{ data?.user?.email }}</span>
       </div>
       <div>
         <button
           class="bg-white text-black py-1 mr-2 cursor-pointer"
           @click="handleSignOut"
-          v-if="data?.user?.email"
+          v-if="status === 'authenticated'"
         >
           Sign Out
         </button>
         <NuxtLink
           to="/sign-in"
           class="bg-gray-800 text-white mr-2 py-1 cursor-pointer"
-          v-if="!data?.user?.email"
+          v-if="status !== 'authenticated'"
         >
           Sign In
         </NuxtLink>
