@@ -4,6 +4,7 @@ specifiers:
   '@iconify/json': ^2.2.98
   '@neondatabase/serverless': ^0.5.6
   '@nuxt/image': 1.0.0-rc.1
+  '@nuxtjs/google-analytics': ^2.4.0
   '@pinia/nuxt': ^0.4.11
   '@sidebase/nuxt-auth': 0.6.0-beta.3
   '@types/bcrypt': ^5.0.0
@@ -62,6 +63,7 @@ dependencies:
 devDependencies:
   '@iconify/json': 2.2.105
   '@nuxt/image': 1.0.0-rc.1
+  '@nuxtjs/google-analytics': 2.4.0
   '@sidebase/nuxt-auth': 0.6.0-beta.3_next-auth@4.22.3
   '@types/node': 18.17.8
   '@types/pg': 8.10.2
@@ -1354,6 +1356,12 @@ packages:
       - vue-tsc
     dev: true
 
+  /@nuxtjs/google-analytics/2.4.0:
+    resolution: {integrity: sha512-rDQTwHIjyjVrx8GywHPuWykJ3jRFGaHl5Iqji/y8tQWUc0yGEeHxOoR0yimzxnTS1Ph2/PubQYpgnVeEPEdL/A==}
+    dependencies:
+      vue-analytics: 5.22.1
+    dev: true
+
   /@panva/hkdf/1.1.1:
     resolution: {integrity: sha512-dhPeilub1NuIG0X5Kvhh9lH4iW3ZsHlnzwgwbOlgwQ2wG1IqFzsgHqmKPk3WzsdWAeaxKJxgM0+W433RmN45GA==}
     dev: true
@@ -1436,6 +1444,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -4985,6 +4994,10 @@ packages:
     dev: true
     optional: true
 
+  /napi-wasm/1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
+    dev: true
+
   /natural-compare-lite/1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
     dev: true
@@ -7313,6 +7326,11 @@ packages:
 
   /vscode-uri/3.0.7:
     resolution: {integrity: sha512-eOpPHogvorZRobNqJGhapa0JdwaxpjVvyBp0QIUMRMSf8ZAlqOdEquKuRmw9Qwu0qXtJIWqFtMkmvJjUZmMjVA==}
+    dev: true
+
+  /vue-analytics/5.22.1:
+    resolution: {integrity: sha512-HPKQMN7gfcUqS5SxoO0VxqLRRSPkG1H1FqglsHccz6BatBatNtm/Vyy8brApktZxNCfnAkrSVDpxg3/FNDeOgQ==}
+    deprecated: Sorry but vue-analytics is no longer maintained. I would suggest you switch to vue-gtag, with love, the guy who made the package.
     dev: true
 
   /vue-bundle-renderer/1.0.3:

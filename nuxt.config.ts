@@ -1,11 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+ 
   modules: [
     "@unocss/nuxt",
     "@sidebase/nuxt-auth",
     "@pinia/nuxt",
-    "@nuxt/image",
+     "@nuxt/image",
+    
   ],
+buildModules : ['@nuxtjs/google-analytics', {
+  id: 'G-RKPW1NE4M2'
+}],
   routeRules: {
     "/": { isr: true },
     "/trending": { isr: true },
