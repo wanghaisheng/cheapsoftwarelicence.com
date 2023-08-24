@@ -1,28 +1,23 @@
 <script lang="ts" setup>
 const errmsg = ref();
 
-const code = ref();
 const password = ref();
 const route = useRoute();
 const email = route.query.email;
 const codequery = route.query.code;
-
-onMounted(() => {
-  code.value = codequery;
-});
 
 const handleConfirmEmail = async () => {
   try {
     await $fetch("/api/confirmEmail", {
       method: "POST",
       body: {
-        code: code.value,
+        code: codequery,
         email: email,
         password: password.value,
       },
     });
     errmsg.value = "";
-    navigateTo("/");
+    navigateTo("/sign-in");
   } catch (err) {
     errmsg.value = err;
   }
@@ -41,17 +36,6 @@ const handleConfirmEmail = async () => {
         autocomplete="off"
         class="flex flex-col gap-2 mt-2"
       >
-        Please enter the 4 digit code.
-        <label for="code">Code:</label>
-        <input
-          name="code"
-          id="code"
-          required
-          v-model="code"
-          placeholder="...."
-          type="text"
-          class="py-1.5 px-4 w-10 rounded-lg hover:border-2 hover:border-groove hover:border-sky-600 focus:border-sky-600"
-        />
         <label for="password">Password:</label>
         <input
           name="password"
@@ -69,7 +53,7 @@ const handleConfirmEmail = async () => {
           type="submit"
           class="bg-black text-white disabled:bg-gray-300 disabled:text-gray-400 py-2 px-4 border-none mt-4 cursor-pointer hover:bg-gray-900"
         >
-          Enter code
+          Confirm password
         </button>
       </form>
     </div>

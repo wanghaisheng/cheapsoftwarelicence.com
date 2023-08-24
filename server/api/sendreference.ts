@@ -20,7 +20,7 @@ const createReference = async (email: string) => {
   const code = "OFFICE10";
 
   await transporter.sendMail({
-    from: "BABACHOULZ <mark@rubyfinance.nl>", // sender address
+    from: "CHEAPSOFTWARELICENCE <mark@rubyfinance.nl>", // sender address
     to: email, // list of receivers
     subject: `Your 10% offer code is ' ${code} '`, // Subject line
     text: `${code} `, // plain text body

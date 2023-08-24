@@ -7,7 +7,7 @@ const name = ref();
 const isError = ref();
 const isLoading = ref(false);
 const isWrongEmail = ref(false);
-const isRequested = ref(false);
+const openPopup = ref(false);
 const confirmPassword = ref("");
 const isWrongPasswordsMatch = ref(false);
 const isWrongPasswordMatch = ref(false);
@@ -51,17 +51,19 @@ const handleSigninCredentials = async () => {
         password: password.value,
       },
     });
+    email;
     isLoading.value = false;
     isError.value = error.value;
     setTimeout(() => {
       isError.value = "";
     }, 3000);
-    console.log(error.value);
+
     if (!error.value) {
-      isRequested.value = true;
-      setTimeout(() => {
-        isRequested.value = false;
-      }, 4000);
+      openPopup.value = true;
+      email.value = "";
+      password.value = "";
+      confirmPassword.value = "";
+      name.value = "";
     }
   }
 };
@@ -72,6 +74,25 @@ if (data.value?.user?.email) {
 </script>
 
 <template>
+  <div
+    v-if="openPopup"
+    class="fixed top-0 left-0 right-0 z-40 h-screen flex items-center justify-center bg-gray-800 bg-opacity-50"
+  >
+    <div
+      class="relative py-16 z-50 px-16 bg-white border border-groove border-gray-300"
+    >
+      <span
+        @click="openPopup = false"
+        class="absolute top-2 right-2 cursor-pointer text-xl"
+        >X</span
+      >
+      <div class="flex flex-col">
+        <span class="font-bold"
+          >Please check your inbox to confirm your email.</span
+        >
+      </div>
+    </div>
+  </div>
   <div class="min-h-screen flex items-center justify-center">
     <div
       class="px-16 py-20 flex flex-col border-groove border-black border-0.5 rounded-sm"
@@ -150,9 +171,7 @@ if (data.value?.user?.email) {
         <span class="text-red-500" v-if="isWrongEmail"
           >Email is not correct</span
         >
-        <span class="text-sm text-blue-600" v-if="isRequested"
-          >Please check your inbox</span
-        >
+
         <button
           :disabled="isLoading"
           type="submit"

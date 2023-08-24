@@ -34,9 +34,10 @@ const email = ref();
 const { data } = useAuth();
 const user = data.value?.user;
 
-if (!user) {
+if (!user?.email) {
   navigateTo("/sign-in");
 }
+
 if (cartItems.value.length === 0) {
   navigateTo("/");
 }
@@ -72,10 +73,10 @@ const streetInput = ref("");
 
 onMounted(() => {
   if (userData) {
-    zipcodeInput.value = userData.value?.data[0].zipcode!;
-    countryInput.value = userData.value?.data[0].country!;
-    numberInput.value = userData.value?.data[0].number!;
-    streetInput.value = userData.value?.data[0].street!;
+    zipcodeInput.value = userData.value?.data[0].zipcode ?? "";
+    countryInput.value = userData.value?.data[0].country ?? "";
+    numberInput.value = userData.value?.data[0].number ?? "";
+    streetInput.value = userData.value?.data[0].street ?? "";
   }
 });
 
