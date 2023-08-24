@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const { status, data, signIn, signOut } = useAuth();
 
-const email = ref();
+const email = ref("");
 const password = ref("");
 const name = ref();
 const isError = ref();
@@ -47,11 +47,10 @@ const handleSigninCredentials = async () => {
       method: "POST",
       body: {
         name: name.value,
-        email: email.value,
+        email: email.value.toLowerCase(),
         password: password.value,
       },
     });
-    email;
     isLoading.value = false;
     isError.value = error.value;
     setTimeout(() => {

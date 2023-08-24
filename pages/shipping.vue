@@ -110,13 +110,13 @@ const createUser = async () => {
     >
     <div class="md:w-3/12 w-5/6 mt-20">
       <div class="flex flex-col gap-2">
-        <label>Name:</label>
+        <label class="font-bold">Name:</label>
         <span>{{ user?.name }}</span>
-        <label>Email:</label>
+        <label class="font-bold">Email:</label>
         <span>{{ user?.email }}</span>
       </div>
       <div class="space-y-2 mt-4 flex flex-col">
-        <label>Zipcode:</label>
+        <label class="font-bold">Zipcode:</label>
         <input
           required
           placeholder="Your zipcode"
@@ -126,7 +126,7 @@ const createUser = async () => {
         />
       </div>
       <div class="space-y-2 mt-4 flex flex-col">
-        <label>Street + housenumber:</label>
+        <label class="font-bold">Street + housenumber:</label>
         <div class="flex gap-2 w-full">
           <input
             required
@@ -137,7 +137,7 @@ const createUser = async () => {
           />
           <input
             required
-            placeholder="Your housenumber"
+            placeholder="Nr."
             v-model="numberInput"
             type="text"
             class="py-1.5 px-4 w-10 rounded-md hover:border-2 hover:border-groove hover:border-sky-600 focus:border-sky-600"
@@ -146,7 +146,7 @@ const createUser = async () => {
       </div>
 
       <div class="space-y-2 mt-4 flex flex-col">
-        <label>Country</label>
+        <label class="font-bold">Country</label>
         <input
           required
           placeholder="Your country"
