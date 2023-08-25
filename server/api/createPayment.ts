@@ -38,7 +38,7 @@ const createPayment = async (email: string, allitems: number[]) => {
         product_data: {
           name: allItems[i].name,
         },
-        unit_amount: allItems[i].price * 100,
+        unit_amount: Number(allItems[i].price) * 100,
       },
       quantity: 1,
     });
