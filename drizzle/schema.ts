@@ -6,6 +6,7 @@ import {
   serial,
   uniqueIndex,
   varchar,
+  numeric
 } from "drizzle-orm/pg-core";
 
 export const products = pgTable("products", {
@@ -33,7 +34,7 @@ export const softwareProducts = pgTable("softwareproducts", {
   name: varchar("name", { length: 256 }),
   collection: varchar("collection", { length: 256 }),
   image: varchar("image", { length: 256 }),
-  price: integer("price"),
+  price: numeric("price"),
   descriptiontitle: varchar("descriptiontitle", { length: 256 }),
   description: varchar("description"),
   descriptiontitle2: varchar("descriptiontitle2", { length: 256 }),
