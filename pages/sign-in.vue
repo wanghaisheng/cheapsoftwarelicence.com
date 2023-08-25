@@ -38,13 +38,13 @@ const handleSigninCredentials = async () => {
       email: email.value.toLowerCase(),
       password: password.value,
     });
-    navigateTo("/");
+    navigateTo("/account");
     isLoading.value = false;
   }
 };
 
 if (status.value === "authenticated") {
-  navigateTo("/");
+  navigateTo("/account");
 }
 </script>
 
