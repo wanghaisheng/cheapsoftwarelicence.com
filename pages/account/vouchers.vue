@@ -25,15 +25,13 @@ const checkVoucher = () => {
   }, 1000);
 };
 
-const { data: userData } = await useAsyncData("getUser", () =>
-  $fetch("/api/getUser", {
-    method: "POST",
-    body: {
-      name: user?.name,
-      email: user?.email,
-    },
-  })
-);
+await $fetch("/api/getUser", {
+  method: "POST",
+  body: {
+    name: user?.name,
+    email: user?.email,
+  },
+});
 </script>
 
 <template>

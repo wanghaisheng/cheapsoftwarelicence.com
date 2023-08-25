@@ -6,15 +6,13 @@ if (status.value !== "authenticated") {
   navigateTo("/sign-in");
 }
 
-const { data: userData } = await useAsyncData("getUser", () =>
-  $fetch("/api/getUser", {
-    method: "POST",
-    body: {
-      name: user?.name,
-      email: user?.email,
-    },
-  })
-);
+const userData = await $fetch("/api/getUser", {
+  method: "POST",
+  body: {
+    name: user?.name,
+    email: user?.email,
+  },
+});
 </script>
 
 <template>

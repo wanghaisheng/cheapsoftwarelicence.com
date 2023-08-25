@@ -37,29 +37,30 @@ if (status.value !== "authenticated") {
   navigateTo("/sign-in");
 }
 
+if (cartItems.value.length === 0) {
+  navigateTo("/");
+}
+
 const createPaymentGeneratedContent = async () => {
-  const { data: link } = await useAsyncData("createPayment", async () => {
-    return await $fetch("/api/createPayment", {
-      method: "POST",
-      body: {
-        email: user?.email,
-        allitems: cartItems.value,
-      },
-    });
+  const link = await $fetch("/api/createPayment", {
+    method: "POST",
+    body: {
+      email: user?.email,
+      allitems: cartItems.value,
+    },
   });
-  window.location.replace(link?.value?.data!);
+
+  window.location.replace(link?.data!);
 };
 
 const isLoading = ref(false);
-const { data: userData } = await useAsyncData("getUser", () =>
-  $fetch("/api/getUser", {
-    method: "POST",
-    body: {
-      name: user?.name,
-      email: user?.email,
-    },
-  })
-);
+const userData = await $fetch("/api/getUser", {
+  method: "POST",
+  body: {
+    name: user?.name,
+    email: user?.email,
+  },
+});
 
 const zipcodeInput = ref("");
 const countryInput = ref("");
@@ -68,27 +69,27 @@ const streetInput = ref("");
 
 onMounted(() => {
   if (userData) {
-    zipcodeInput.value = userData.value?.data[0].zipcode ?? "";
-    countryInput.value = userData.value?.data[0].country ?? "";
-    numberInput.value = userData.value?.data[0].number ?? "";
-    streetInput.value = userData.value?.data[0].street ?? "";
+    zipcodeInput.value = userData?.data[0].zipcode ?? "";
+    countryInput.value = userData?.data[0].country ?? "";
+    numberInput.value = userData?.data[0].number ?? "";
+    streetInput.value = userData?.data[0].street ?? "";
   }
 });
 
 const createUser = async () => {
   isLoading.value = true;
-  await useAsyncData("updateUser", () =>
-    $fetch("/api/updateUser", {
-      method: "POST",
-      body: {
-        email: user?.email,
-        zipcode: zipcodeInput.value,
-        street: streetInput.value,
-        number: numberInput.value,
-        country: countryInput.value,
-      },
-    })
-  );
+
+  await $fetch("/api/updateUser", {
+    method: "POST",
+    body: {
+      email: user?.email,
+      zipcode: zipcodeInput.value,
+      street: streetInput.value,
+      number: numberInput.value,
+      country: countryInput.value,
+    },
+  });
+
   await createPaymentGeneratedContent();
 
   isLoading.value = false;

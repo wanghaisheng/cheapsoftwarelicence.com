@@ -22,17 +22,12 @@ const { data: payments } = await useAsyncData("getPayments", async () => {
 });
 
 const checkReceived = async (id: string) => {
-  const { data: productCode } = await useAsyncData(
-    "checkProductCode",
-    async () => {
-      return await $fetch("/api/check-product-code", {
-        method: "POST",
-        body: { id: id },
-      });
-    }
-  );
-  console.log(productCode.value);
-  isSend.value = productCode.value;
+  const productCode = await $fetch("/api/check-product-code", {
+    method: "POST",
+    body: { id: id },
+  });
+
+  isSend.value = productCode;
   isOpen.value = true;
 };
 </script>

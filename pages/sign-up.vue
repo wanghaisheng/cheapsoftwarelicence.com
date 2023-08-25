@@ -43,7 +43,7 @@ const handleSigninCredentials = async () => {
   } else {
     isLoading.value = true;
     //create the user in the database with hashed password
-    const { data, error } = await useFetch("/api/confirmEmail", {
+    await $fetch("/api/confirmEmail", {
       method: "POST",
       body: {
         name: name.value,
@@ -52,18 +52,15 @@ const handleSigninCredentials = async () => {
       },
     });
     isLoading.value = false;
-    isError.value = error.value;
     setTimeout(() => {
       isError.value = "";
     }, 3000);
 
-    if (!error.value) {
-      openPopup.value = true;
-      email.value = "";
-      password.value = "";
-      confirmPassword.value = "";
-      name.value = "";
-    }
+    openPopup.value = true;
+    email.value = "";
+    password.value = "";
+    confirmPassword.value = "";
+    name.value = "";
   }
 };
 
