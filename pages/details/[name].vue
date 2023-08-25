@@ -114,7 +114,7 @@ const handleAddToCart = (id: number) => {
             <div
               class="text-2xl px-4 py-3 bg-gray-900 text-white font-bold mt-2"
             >
-              <span>€ {{ data?.data?.price?.toFixed(2) }},-</span>
+              <span>€ {{ Number(data?.data?.price)?.toFixed(2) }},-</span>
             </div>
             <div>
               <button

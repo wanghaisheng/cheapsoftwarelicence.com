@@ -95,7 +95,8 @@ const checkReceived = async (id: string) => {
 
               <th>
                 <span class="font-medium"
-                  >€ {{ ((payment?.amount_total ?? 0) / 100).toFixed(2) }}</span
+                  >€
+                  {{ ((payment?.amount_total ?? 0) / 100)?.toFixed(2) }}</span
                 >
               </th>
               <th>
