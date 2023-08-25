@@ -17,7 +17,7 @@ useHead({
 <template>
   <div class="min-h-screen font-inter w-screen">
     <ClientOnly><Upheader /></ClientOnly>
-    <ClientOnly><Downheader /></ClientOnly>
+    <Downheader />
     <slot />
     <Footer />
     <ClientOnly><Cookie /></ClientOnly>
