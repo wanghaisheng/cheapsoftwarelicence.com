@@ -7,7 +7,7 @@ const isCorrectVoucher = ref("unknown");
 const isLoading = ref(false);
 
 if (!user?.email) {
-  navigateTo("/");
+  navigateTo("/sign-in");
 }
 
 const checkVoucher = () => {

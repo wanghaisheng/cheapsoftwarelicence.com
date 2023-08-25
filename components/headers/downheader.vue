@@ -52,7 +52,7 @@ const { status, data, signOut } = useAuth();
       </div>
       <div>
         <NuxtLink
-          to="/sign-in"
+          to="/account"
           class="bg-gray-800 text-white mr-2 py-1 cursor-pointer"
           v-if="status !== 'authenticated'"
         >
