@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-const { data } = useAuth();
+const { data, status } = useAuth();
 const user = data.value?.user;
 const voucherInput = ref("");
 const correctVoucher = "OFFICE10";
 const isCorrectVoucher = ref("unknown");
 const isLoading = ref(false);
 
-if (!user?.email) {
+if (status.value !== "authenticated") {
   navigateTo("/sign-in");
 }
 

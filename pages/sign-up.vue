@@ -67,7 +67,7 @@ const handleSigninCredentials = async () => {
   }
 };
 
-if (data.value?.user?.email) {
+if (status.value === "authenticated") {
   navigateTo("/");
 }
 </script>

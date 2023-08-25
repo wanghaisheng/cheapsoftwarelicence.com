@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import dayJs from "dayjs";
 
-const { data } = useAuth();
+const { status, data } = useAuth();
 const user = data.value?.user;
 const isSend = ref();
 const isOpen = ref(false);
 
-if (!user?.email) {
+if (status.value !== "authenticated") {
   navigateTo("/sign-in");
 }
 

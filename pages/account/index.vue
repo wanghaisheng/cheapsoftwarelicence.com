@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-const { data, signOut } = useAuth();
+const { status, data, signOut } = useAuth();
 const user = data.value?.user;
 
-if (!user?.email) {
+if (status.value !== "authenticated") {
   navigateTo("/sign-in");
 }
 
