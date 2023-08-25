@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+const { data: auth, signOut } = useAuth();
+const user = auth.value?.user;
 definePageMeta({
   layout: "default",
 });
@@ -12,6 +14,10 @@ const { data, error, refresh } = await useAsyncData("getProducts", () =>
   })
 );
 const products = data.value?.data;
+
+if (!user?.email) {
+  navigateTo("/sign-in");
+}
 </script>
 
 <template>
