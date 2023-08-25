@@ -30,16 +30,11 @@ total.value = allPrices?.reduce((a: number, b: number) => a + b, 0);
 
 totalToPay.value = total.value + totalShippingCosts.value;
 
-const email = ref();
-const { data } = useAuth();
+const { data, status } = useAuth();
 const user = data.value?.user;
 
-if (!user?.email) {
+if (status.value !== "authenticated") {
   navigateTo("/sign-in");
-}
-
-if (cartItems.value.length === 0) {
-  navigateTo("/");
 }
 
 const createPaymentGeneratedContent = async () => {

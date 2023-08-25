@@ -98,10 +98,7 @@ const sendReference = async () => {
           <NuxtLink href="/help"
             ><div class="i-mdi-help-circle-outline text-2xl text-white"
           /></NuxtLink>
-          <NuxtLink v-if="user" href="/account"
-            ><div class="i-mdi-account-outline text-2xl text-white"
-          /></NuxtLink>
-          <NuxtLink v-else href="/sign-in"
+          <NuxtLink href="/account"
             ><div class="i-mdi-account-outline text-2xl text-white"
           /></NuxtLink>
           <!-- <div class="i-mdi-cards-heart-outline text-2xl text-black" /> -->

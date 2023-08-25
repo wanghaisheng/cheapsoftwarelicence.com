@@ -19,7 +19,7 @@ const { data: userData } = await useAsyncData("getUser", () =>
 
 <template>
   <div
-    v-if="user && userData"
+    v-if="user?.email && userData"
     class="flex md:w-4/6 w-full mx-auto min-h-screen mb-20 mt-10"
   >
     <sidebar />
