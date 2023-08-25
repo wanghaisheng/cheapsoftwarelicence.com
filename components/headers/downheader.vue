@@ -47,9 +47,6 @@ const { status, data, signOut } = useAuth();
     </div>
 
     <div class="flex items-end space-x-2 md:mr-4 mr-2">
-      <div v-if="status === 'authenticated'" class="xl:flex xl:flex-col hidden">
-        <span class="text-sm">{{ data?.user?.email }}</span>
-      </div>
       <div>
         <NuxtLink
           to="/account"
