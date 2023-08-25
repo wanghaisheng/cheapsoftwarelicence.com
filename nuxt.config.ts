@@ -1,6 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
- 
+  runtimeConfig: {
+    public: {
+      gtagId: "G-RKPW1NE4M2",
+    }
+  },
   modules: [
     "@unocss/nuxt",
     "@sidebase/nuxt-auth",
