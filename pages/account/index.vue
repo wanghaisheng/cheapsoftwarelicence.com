@@ -2,7 +2,7 @@
 const { data, signOut } = useAuth();
 const user = data.value?.user;
 
-if (!user) {
+if (!user?.email) {
   navigateTo("/sign-in");
 }
 
@@ -15,10 +15,6 @@ const { data: userData } = await useAsyncData("getUser", () =>
     },
   })
 );
-
-if (!data.value?.user?.email) {
-  navigateTo("/");
-}
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const { data } = useAuth();
 const user = data.value?.user;
-if (!user) {
+if (!user?.email) {
   navigateTo("/sign-in");
 }
 const isLoading = ref(false);
@@ -45,10 +45,6 @@ const createUser = async () => {
   );
   isLoading.value = false;
   await navigateTo("/");
-
-  if (!data.value?.user?.email) {
-    navigateTo("/");
-  }
 };
 </script>
 

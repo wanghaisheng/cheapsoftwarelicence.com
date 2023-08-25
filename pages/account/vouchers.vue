@@ -5,7 +5,8 @@ const voucherInput = ref("");
 const correctVoucher = "OFFICE10";
 const isCorrectVoucher = ref("unknown");
 const isLoading = ref(false);
-if (!user) {
+
+if (!user?.email) {
   navigateTo("/");
 }
 
@@ -33,10 +34,6 @@ const { data: userData } = await useAsyncData("getUser", () =>
     },
   })
 );
-
-if (!data.value?.user?.email) {
-  navigateTo("/");
-}
 </script>
 
 <template>

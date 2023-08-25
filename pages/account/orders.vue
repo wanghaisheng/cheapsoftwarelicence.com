@@ -6,7 +6,7 @@ const user = data.value?.user;
 const isSend = ref();
 const isOpen = ref(false);
 
-if (!user) {
+if (!user?.email) {
   navigateTo("/sign-in");
 }
 
@@ -34,10 +34,6 @@ const checkReceived = async (id: string) => {
   console.log(productCode.value);
   isSend.value = productCode.value;
   isOpen.value = true;
-
-  if (!data.value?.user?.email) {
-    navigateTo("/");
-  }
 };
 </script>
 
