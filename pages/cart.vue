@@ -19,7 +19,7 @@ const { data, pending, error, refresh } = await useAsyncData(
     })
 );
 const allPrices = data.value?.data.map((item) => {
-  return item[0]?.price;
+  return Number(item[0]?.price);
 });
 total.value = allPrices?.reduce((a: any, b: any) => a + b, 0);
 
@@ -48,7 +48,7 @@ const removeCartItem = async (index: number) => {
               v-for="(it, ind) in item"
             >
               <span class="absolute top-2 right-2"
-                >€ {{ it?.price?.toFixed(2) }},-</span
+                >€ {{ Number(it?.price)?.toFixed(2) }},-</span
               >
               <div class="p-8">
                 <nuxt-img
