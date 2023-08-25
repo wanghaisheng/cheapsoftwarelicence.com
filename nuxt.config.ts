@@ -8,9 +8,6 @@ export default defineNuxtConfig({
      "@nuxt/image",
     
   ],
-buildModules : ['@nuxtjs/google-analytics', {
-  id: 'G-RKPW1NE4M2'
-}],
   routeRules: {
     "/": { isr: true },
     "/trending": { isr: true },
