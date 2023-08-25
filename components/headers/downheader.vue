@@ -2,9 +2,6 @@
 const isOpenCollections = ref(false);
 
 const { status, data, signOut } = useAuth();
-const handleSignOut = async () => {
-  await signOut();
-};
 </script>
 
 <template>
@@ -54,19 +51,12 @@ const handleSignOut = async () => {
         <span class="text-sm">{{ data?.user?.email }}</span>
       </div>
       <div>
-        <button
-          class="bg-white text-black py-1 mr-2 cursor-pointer"
-          @click="handleSignOut"
-          v-if="status === 'authenticated'"
-        >
-          Sign Out
-        </button>
         <NuxtLink
           to="/sign-in"
           class="bg-gray-800 text-white mr-2 py-1 cursor-pointer"
           v-if="status !== 'authenticated'"
         >
-          Sign In
+          Sign In / Sign up
         </NuxtLink>
       </div>
     </div>
