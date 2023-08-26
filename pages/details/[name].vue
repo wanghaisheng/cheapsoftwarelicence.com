@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useCartStore } from "@/stores/cart-store";
+import ProductReview from "@/components/ProductReview.vue";
 
 const { params, query } = useRoute();
 
@@ -20,8 +21,6 @@ const { data } = useAsyncData("getproduct", async () => {
     body: { id: query.id },
   });
 });
-
-console.log(data.value?.data);
 
 const handleAddToCart = (id: number) => {
   store.addToCart(id);
@@ -163,6 +162,9 @@ const handleAddToCart = (id: number) => {
               }}</span>
             </div>
           </div>
+          <section class="mt-6">
+            <product-review :product-id="Number(query.id)" />
+          </section>
         </div>
       </div>
     </div>
