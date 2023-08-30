@@ -24,10 +24,17 @@ const allPrices = data.value?.data.map((item) => {
 total.value = allPrices?.reduce((a: any, b: any) => a + b, 0);
 
 totalToPay.value = total.value + totalShippingCosts.value;
+
 const removeCartItem = async (index: number) => {
+  console.log(index);
   store.removeFromCart(index);
   cartItems.value = [...store.cart];
   await refresh();
+  const allPrices = data.value?.data.map((item) => {
+    return item[0]?.price;
+  });
+  total.value = allPrices?.reduce((a: any, b: any) => a + b, 0);
+  totalToPay.value = total.value + totalShippingCosts.value;
 };
 </script>
 
