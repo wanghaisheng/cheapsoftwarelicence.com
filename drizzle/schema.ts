@@ -66,6 +66,7 @@ export const user = pgTable("user", {
   street: varchar("street", { length: 256 }),
   number: varchar("number", { length: 256 }),
   country: varchar("country", { length: 256 }),
+  city: varchar("city", { length: 256 }),
 });
 
 export const emailconfirmation = pgTable("emailconfirmation", {
