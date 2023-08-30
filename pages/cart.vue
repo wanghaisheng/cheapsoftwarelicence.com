@@ -112,9 +112,7 @@ const removeCartItem = async (index: number) => {
             <div class="py-2">
               <div class="h-0.2 bg-black w-full"></div>
             </div>
-            <NuxtLink class="text-sm" to="/account/voucher"
-              >Add vouchercode</NuxtLink
-            >
+
             <div
               class="mt-6 py-4 px-2 bg-gray-200 font-bold flex justify-between"
             >
