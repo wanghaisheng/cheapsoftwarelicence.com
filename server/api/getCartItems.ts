@@ -1,4 +1,4 @@
-import { products } from "../../drizzle/schema";
+import { products, softwareProducts } from "../../drizzle/schema";
 import db from "../../drizzle/db";
 import { eq } from "drizzle-orm";
 
@@ -11,7 +11,7 @@ interface CartItems {
 const fetchCartItems = async (cartItems: CartItems[]) => {
   let loopItems = []
   for (let i = 0; i < cartItems.length; i++) {
-    loopItems.push({ ...(await db.select().from(products).where(eq(products.id, Number(cartItems[i].id)))).at(0), uuid: cartItems[i].randomId })
+    loopItems.push({ ...(await db.select().from(softwareProducts).where(eq(softwareProducts.id, Number(cartItems[i].id)))).at(0), uuid: cartItems[i].randomId })
   }
   return loopItems;
 };

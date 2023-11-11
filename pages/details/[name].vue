@@ -3,6 +3,7 @@ import { useCartStore } from "@/stores/cart-store";
 import ProductReview from "@/components/ProductReview.vue";
 
 const { params, query } = useRoute();
+const isOpenToast = ref(false)
 
 useHead({
   title: `CheapSoftwareLicences, ${params.name}`,
@@ -24,14 +25,27 @@ const { data } = useAsyncData("getproduct", async () => {
 
 const handleAddToCart = (id: number) => {
   store.addToCart(id);
-  const input = document.getElementById("first_name");
+  // @ts-ignore
+  const input = document.getElementById("addToCart");
+  isOpenToast.value = true
+
   setTimeout(() => {
     input?.blur();
-  }, 1500);
+ 
+
+  }, 1000);
+
+  setTimeout(() => {
+    isOpenToast.value = false
+  },6000)
 };
 </script>
 
 <template>
+  <div class="h-12 w-11/12 md:w-80 p-5 animate-bounce-in-left mx-auto bg-black border-groove text-white text-xl z-40 border-1 fixed bottom-6 md:right-6 flex"
+   v-if="isOpenToast">
+    <span class="font-bold">Product succesfully added to the cart.</span>
+  </div>
   <div
     class="relative h-20 mt-20 mb-10 bg-sky-700 flex items-center justify-center"
   ></div>
@@ -102,7 +116,7 @@ const handleAddToCart = (id: number) => {
               <button
                 id="first_name"
                 @click="handleAddToCart(data?.data?.id as number)"
-                class="focus:animate-flip bg-black no-underline py-4 text-white disabled:bg-gray-300 disabled:text-gray-400 py-2 px-4 border-none mt-4 cursor-pointer disabled:cursor-default hover:bg-gray-900"
+                class="focus:animate-fade-in bg-black no-underline py-4 text-white disabled:bg-gray-300 disabled:text-gray-400 py-2 px-4 border-none mt-4 cursor-pointer disabled:cursor-default hover:bg-gray-900"
               >
                 Add to cart
               </button>
