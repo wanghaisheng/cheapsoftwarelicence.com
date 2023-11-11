@@ -7,7 +7,6 @@ export default defineNuxtConfig({
   },
   modules: [
     "@unocss/nuxt",
-    "@sidebase/nuxt-auth",
     "@pinia/nuxt",
      "@nuxt/image",
     
@@ -27,9 +26,5 @@ export default defineNuxtConfig({
   components: {
     dirs: ["~/components"],
     global: true,
-  },
-  auth: {
-    isEnabled: true,
-    baseURL: "/api/auth",
-  },
+  }
 });

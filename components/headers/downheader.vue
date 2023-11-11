@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 const isOpenCollections = ref(false);
 
-const { status, data, signOut } = useAuth();
 </script>
 
 <template>
@@ -47,15 +46,7 @@ const { status, data, signOut } = useAuth();
     </div>
 
     <div class="flex items-end space-x-2 md:mr-4 mr-2">
-      <div>
-        <NuxtLink
-          to="/account"
-          class="bg-gray-800 text-white mr-2 py-1 cursor-pointer"
-          v-if="status !== 'authenticated'"
-        >
-          Sign In / Sign up
-        </NuxtLink>
-      </div>
+     
     </div>
   </div>
 </template>

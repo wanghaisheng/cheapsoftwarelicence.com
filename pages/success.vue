@@ -2,6 +2,7 @@
 import { useCartStore } from "../stores/cart-store";
 const store = useCartStore();
 const cartItems: Ref<number[]> = ref([]);
+//@ts-ignore
 cartItems.value.push(...store.cart);
 
 onMounted(() => {

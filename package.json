@@ -13,7 +13,6 @@
   "devDependencies": {
     "@iconify/json": "^2.2.98",
     "@nuxt/image": "1.0.0-rc.1",
-    "@sidebase/nuxt-auth": "0.6.0-beta.3",
     "@types/node": "^18.17.3",
     "@types/pg": "^8.10.2",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
@@ -23,7 +22,6 @@
     "eslint": "^8.46.0",
     "eslint-plugin-vue": "^9.16.1",
     "jsdom": "^21.1.2",
-    "next-auth": "4.22.3",
     "normalize.css": "^8.0.1",
     "nuxt": "^3.6.5",
     "prettier": "2.8.8",
